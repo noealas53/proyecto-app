@@ -1,7 +1,6 @@
 import React from 'react';
-import { HashRouter } from 'react-router-dom';
 import { 
-  BrowserRouter as Router, 
+  HashRouter as Router, 
   Routes, 
   Route } from "react-router-dom";
 import Login from './Pages/Login';
@@ -11,15 +10,15 @@ import Layout from './Components/Layout';
 
 
 const App = () => (
-  <HashRouter>
-    <HashRouter>
-      <HashRouter element={<Layout />}>
-        <HashRouter exact path="/" element={<Main />} />
-        <HashRouter exact path="/post" element={<Post />} />
-      </HashRouter>
+  <Router>
+    <Routes>
+      <Route element={<Layout />}>
+        <Route exact path="/" element={<Main />} />
+        <Route exact path="/post" element={<Post />} />
+      </Route>
       <Route exact path="/login" element={<Login />} />
-    </HashRouter>
-  </HashRouter>    
+    </Routes>
+  </Router>    
 );
 
 export default App;
