@@ -12,13 +12,13 @@ import Layout from './Components/Layout';
 
 const App = () => (
   <HashRouter>
-    <Routes>
-      <Route element={<Layout />}>
-        <Route exact path="/" element={<Main />} />
-        <Route exact path="/post" element={<Post />} />
-      </Route>
+    <HashRouter>
+      <HashRouter element={<Layout />}>
+        <HashRouter exact path="/" element={<Main />} />
+        <HashRouter exact path="/post" element={<Post />} />
+      </HashRouter>
       <Route exact path="/login" element={<Login />} />
-    </Routes>
+    </HashRouter>
   </HashRouter>    
 );
 
