@@ -1,4 +1,5 @@
 import React from 'react';
+import { HashRouter } from 'react-router-dom';
 import { 
   BrowserRouter as Router, 
   Routes, 
@@ -10,7 +11,7 @@ import Layout from './Components/Layout';
 
 
 const App = () => (
-  <Router>
+  <HashRouter>
     <Routes>
       <Route element={<Layout />}>
         <Route exact path="/" element={<Main />} />
@@ -18,7 +19,7 @@ const App = () => (
       </Route>
       <Route exact path="/login" element={<Login />} />
     </Routes>
-  </Router>    
+  </HashRouter>    
 );
 
 export default App;
